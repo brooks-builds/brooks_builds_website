@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="primary" dark class="d-flex justify-space-around mb-6">
+  <v-app-bar app color="primary" dark class="d-flex justify-space-around">
       <v-btn
         text
       >
