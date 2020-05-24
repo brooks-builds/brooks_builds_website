@@ -1,27 +1,39 @@
 <template>
-  <div id="app">
-    <Navigation />
-  </div>
+  <v-app>
+    <v-app-bar app color="primary" dark class="d-flex justify-space-around mb-6">
+      <v-btn
+        text
+      >
+        <span class="mr-2">Home</span>
+      </v-btn>
+      <v-btn text class="mr-2">
+        <span class="mr-2">Recent Videos</span>
+      </v-btn>
+      <v-btn text class="mr-2">
+        <span class="mr-2">Chat Commands</span>
+      </v-btn>
+      <v-btn text class="mr-2">
+        <span class="mr-2">Current Projects</span>
+      </v-btn>
+      <v-btn text class="mr-2">
+        <span class="mr-2">Project Suggestions</span>
+      </v-btn>
+    </v-app-bar>
+
+    <v-content>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import Navigation from "./components/Navigation.vue";
-
 export default {
   name: "App",
+
   components: {
-    Navigation
-  }
+  },
+
+  data: () => ({
+    //
+  })
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
