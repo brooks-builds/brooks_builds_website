@@ -19,8 +19,11 @@
           </v-col>
           <v-spacer></v-spacer>
           <v-col cols="6" class="mt-7">
-            <VideoCard />
+            <PremiereVideo />
           </v-col>
+        </v-row>
+        <v-row>
+          <RecentVideos />
         </v-row>
       </v-container>
     </v-content>
@@ -31,7 +34,8 @@
 import Navigation from "./components/Navigation";
 import About from "./components/About";
 import Schedule from "./components/Schedule";
-import VideoCard from "./components/VideoCard";
+import RecentVideos from "./components/RecentVideos";
+import PremiereVideo from "./components/PremiereVideo";
 
 export default {
   name: "App",
@@ -40,7 +44,8 @@ export default {
     Navigation,
     About,
     Schedule,
-    VideoCard
+    RecentVideos,
+    PremiereVideo
   },
 
   data: () => ({
