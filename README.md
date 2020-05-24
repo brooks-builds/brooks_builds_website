@@ -1,7 +1,24 @@
-# Brooks Builds Website
+# brooks_builds_website
 
-This is the repo that holds the code for the Brooks Builds website.
+## Project setup
+```
+npm install
+```
 
-## Plan
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-![SVG wireframe mock of the website](plan/index_wireframe.drawio.svg)
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
