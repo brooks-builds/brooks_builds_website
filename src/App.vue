@@ -25,6 +25,9 @@
         <v-row>
           <RecentVideos />
         </v-row>
+        <v-row>
+          <ChatCommands />
+        </v-row>
       </v-container>
     </v-content>
   </v-app>
@@ -36,6 +39,7 @@ import About from "./components/About";
 import Schedule from "./components/Schedule";
 import RecentVideos from "./components/RecentVideos";
 import PremiereVideo from "./components/PremiereVideo";
+import ChatCommands from "./components/ChatCommands";
 
 export default {
   name: "App",
@@ -45,11 +49,12 @@ export default {
     About,
     Schedule,
     RecentVideos,
-    PremiereVideo
+    PremiereVideo,
+    ChatCommands,
   },
 
-  data: () => ({
-    //
-  })
+  mounted() {
+    this.$store.dispatch("fetchAllChatCommands");
+  },
 };
 </script>
