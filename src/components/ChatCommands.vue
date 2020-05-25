@@ -7,9 +7,9 @@
       <p>
         The following are the commands that you can use at Brooks' Twitch live
         stream at
-        <a href="https://www.twitch.tv/brookzerker"
-          >https://www.twitch.tv/brookzerker</a
-        >.
+        <a
+          href="https://www.twitch.tv/brookzerker"
+        >https://www.twitch.tv/brookzerker</a>.
       </p>
     </v-row>
     <v-row class="justify-center">
@@ -23,18 +23,19 @@ export default {
   name: "ChatCommand",
   computed: {
     chatCommands() {
+      console.log(this.$store.state.chatCommands);
       return this.$store.state.chatCommands;
-    },
+    }
   },
   data() {
     return {
       headers: [
         { text: "command", value: "command" },
         { text: "response", value: "response" },
-        { text: "times used", value: "used" },
-      ],
+        { text: "times used", value: "used" }
+      ]
     };
-  },
+  }
 };
 </script>
 

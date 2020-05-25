@@ -31,6 +31,7 @@ export default new Vuex.Store({
           return command;
         });
 
+        console.log("got commands", commands);
         commit("setChatCommands", commands);
       } catch (error) {
         console.error(error);
