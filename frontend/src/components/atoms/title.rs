@@ -25,6 +25,11 @@ fn create_style() -> String {
         .center {
             text-align: center;
         }
+
+        h1 {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
     "#
     .to_owned()
 }
