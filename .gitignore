@@ -1,4 +1,4 @@
 *.pyc
 venv/
-frontend/dist
-frontend/target
+**/dist
+**/target

@@ -3,4 +3,4 @@ runtime:
   name: python
   options:
     virtualenv: venv
-description: Brooks Builds main website
+description: Brooks Builds website
