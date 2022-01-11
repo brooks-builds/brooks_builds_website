@@ -1,6 +1,0 @@
-name: brooks_builds_website
-runtime:
-  name: python
-  options:
-    virtualenv: venv
-description: Brooks Builds website
