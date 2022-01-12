@@ -1,3 +1,4 @@
 /target
 **/dist
 **/node_modules
+end-to-end-tests/cypress/videos

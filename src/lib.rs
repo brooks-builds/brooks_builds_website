@@ -4,7 +4,7 @@ use yew::prelude::*;
 pub fn app() -> Html {
     html! {
       <div>
-        <h1>{"Hello World"}</h1>
+        <h1 data-test-hello="true">{"Hello World"}</h1>
       </div>
     }
 }

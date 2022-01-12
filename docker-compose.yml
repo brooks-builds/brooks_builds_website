@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  website:
+    build: .
+    environment:
+      - TRUNK_SERVE_PORT=3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./:/code"
+  integration_tests:
+    image: cypress/included:9.2.1
+    volumes:
+      - "./end-to-end-tests:/e2e"
+    working_dir: /e2e
+    depends_on:
+      - website
