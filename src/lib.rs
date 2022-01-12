@@ -8,3 +8,12 @@ pub fn app() -> Html {
       </div>
     }
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn canary() {
+        let five = 5;
+        assert_eq!(five, 5);
+    }
+}
