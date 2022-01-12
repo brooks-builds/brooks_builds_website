@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "cypress": "*"
+  },
+  "scripts": {
+    "test": "cypress run watch"
+  }
+}
