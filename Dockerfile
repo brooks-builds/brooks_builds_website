@@ -7,5 +7,6 @@ RUN curl https://sh.rustup.rs -sSf -y | sh
 RUN cargo install cargo-watch
 RUN rustup target add wasm32-unknown-unknown
 RUN cargo install trunk
+RUN cargo install cargo-edit
 WORKDIR /code
-CMD cargo watch -x run
+CMD trunk serve

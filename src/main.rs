@@ -1,3 +1,5 @@
+use brooks_builds_website::App;
+
 fn main() {
-    println!(", worlHellod!");
+    yew::start_app::<App>();
 }
