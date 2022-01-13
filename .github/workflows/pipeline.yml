@@ -1,17 +1,19 @@
 name: Brooks Builds Pipeline
 on: [push, pull_request]
-defaults:
-  runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
 jobs:
   lint:
     name: linting the codebase
+    runs-on: ubuntu-latest
     steps:
       - run: cargo clippy -- -D clippy::pedantic
       - run: cargo fmt
   unit-test:
+    name: Running the Rust unit tests
+    runs-on: ubuntu-latest
     steps:
+      - run: cargo clippy -- -D clippy::pedantic
       - run: cargo test
   # end-to-end-test:
   # deploy:
