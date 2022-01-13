@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker-compose -d -f docker-compose-ci.yml up
+      - run: docker-compose -f docker-compose-ci.yml up
       - name: install 
         working-directory: end-to-end-tests
         run: |
           npm ci
           npm run test:ci
-      - run: docker-compose -d -f docker-compose-ci.yml down
+      - run: docker-compose -f docker-compose-ci.yml down
   # deploy:
   # create-review-app:
   # delete-review-app:
