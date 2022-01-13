@@ -14,7 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cargo test
-  # end-to-end-test:
+  end-to-end-test:
+    name: Running Cypress integration tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker-compose -d -f docker-compose-ci.yml up
+      - name: install 
+        working-directory: end-to-end-tests
+        run: |
+          npm ci
+          npm run test:ci
+      - run: docker-compose -d -f docker-compose-ci.yml down
   # deploy:
   # create-review-app:
   # delete-review-app:

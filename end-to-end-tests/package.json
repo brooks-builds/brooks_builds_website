@@ -4,6 +4,7 @@
   },
   "scripts": {
     "pretest": "cypress install",
-    "test": "cypress run watch"
+    "test": "cypress run watch",
+    "test:ci": "cypress run"
   }
 }
