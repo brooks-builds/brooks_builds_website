@@ -1,0 +1,18 @@
+name: Brooks Builds Pipeline
+on: [push, pull_request]
+jobs:
+  lint:
+    name: linting the codebase
+    runs-on: ubuntu-latest
+    steps:
+      - run: cargo clippy -- -D clippy::pedantic
+      - run: cargo fmt
+  # unit-test:
+  # end-to-end-test:
+  # deploy:
+  # create-review-app:
+  # delete-review-app:
+  # test-review-app:
+  # test-deployed-app:
+  # rollback:
+  # create-release:
