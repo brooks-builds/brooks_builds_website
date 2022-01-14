@@ -21,7 +21,7 @@ jobs:
   deploy:
     name: Deploy
     needs: [ test ]
-    if: github.event_name == 'push' && github.ref_name == 'master'
+    if: github.event_name == 'push' && github.ref_name == 'setting-up-cicd'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
