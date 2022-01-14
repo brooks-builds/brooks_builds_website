@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: cp end-to-end-tests/cypress-ci.json end-to-end-tests/cypress.json
       - run: docker-compose -f docker-compose-ci.yml up -d
       - name: install 
         working-directory: end-to-end-tests
