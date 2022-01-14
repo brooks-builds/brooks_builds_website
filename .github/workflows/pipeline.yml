@@ -1,38 +1,30 @@
 name: Brooks Builds Pipeline
 on: [push, pull_request]
 jobs:
-  lint:
-    name: linting the codebase
+  test:
+    name: Testing and linting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: cargo clippy -- -D clippy::pedantic
       - run: cargo fmt
-  unit-test:
-    name: Running the Rust unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - run: cargo test
-  end-to-end-test:
-    name: Running Cypress integration tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: cp end-to-end-tests/cypress-ci.json end-to-end-tests/cypress.json
       - run: docker-compose -f docker-compose-ci.yml up -d
-      - name: install 
+      - name: install cypress and run tests
         working-directory: end-to-end-tests
         run: |
+          cp cypress-ci.json cypress.json
           npm ci
           sleep 30
           npm run test:ci
       - run: docker-compose -f docker-compose-ci.yml down
   deploy:
     name: Deploy
-    needs: [ lint, unit-test, end-to-end-test ]
+    needs: [ test ]
+    if: github.event_name == "push" && github.ref_name == "master"
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: docker build -t rustdev .
       - run: docker run --rm -v "$(pwd):/code" rustdev trunk build --release
       - run: ls dist
