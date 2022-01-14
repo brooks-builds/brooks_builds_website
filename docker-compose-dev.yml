@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   website:
-    build: dev
+    build: .
     environment:
       - TRUNK_SERVE_PORT=3000
     ports:
