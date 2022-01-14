@@ -25,6 +25,7 @@ jobs:
         working-directory: end-to-end-tests
         run: |
           npm ci
+          sleep 30
           npm run test:ci
       - run: docker-compose -f docker-compose-ci.yml down
   # deploy:
