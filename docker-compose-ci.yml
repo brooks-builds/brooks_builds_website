@@ -1,10 +1,11 @@
 version: '3.9'
 services:
   website:
-    build: dev
+    image: brookzerker/rust:latest
     environment:
       - TRUNK_SERVE_PORT=3000
     ports:
       - "3000:3000"
     volumes:
       - "./:/code"
+    command: trunk serve
