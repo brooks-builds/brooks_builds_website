@@ -33,9 +33,9 @@ jobs:
     needs: [ lint, unit-test, end-to-end-test ]
     runs-on: ubuntu-latest
     steps:
-      run: docker build -t rustdev .
-      run: docker run --rm -v "$(pwd):/code" rustdev trunk build --release
-      run: ls dist
+      - run: docker build -t rustdev .
+      - run: docker run --rm -v "$(pwd):/code" rustdev trunk build --release
+      - run: ls dist
   # create-review-app:
   # delete-review-app:
   # test-review-app:
